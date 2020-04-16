@@ -37,7 +37,8 @@ void stop(struct Motors *);
 
 	struct Motor m1;
 	struct Motor m2;
-     int speed;
+    int speed_fast = 75;
+     int speed_slow = 30;
 
 	if(wiringPiSetup() < 0){
 		printf("Initialization Failed.");
@@ -50,12 +51,12 @@ void stop(struct Motors *);
 
 			init(&m1, 11, 13, 15);
 			init(&m2, 22, 16, 18);
-		 	forward(&m1, 75);
-		 	forward(&m2, 75);
+		 	forward(&m1, speed_fast);
+		 	forward(&m2, speed_fast);
 		 	stop(&m1);
 		 	stop(&m2);
-		 	backward(&m1, 30);
-		 	backward(&m2, 30);
+		 	backward(&m1, speed_slow);
+		 	backward(&m2, speed_slow);
 		 	stop(&m1);
 		 	stop(&m2);
 
