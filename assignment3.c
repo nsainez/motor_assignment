@@ -87,9 +87,9 @@ void init(struct Motors *motors, int enable, int forward, int reverse){
 //	}
 //		else {
 				printf("pulse width modulation set successfully.");
-//				printf("enable_motor is set to: %d\n", motors->enable_motor);
-//				printf("forward_motor is set to: %d\n", motors->forward_motor);
-//				printf("reverse_motor is set to: %d\n", motors->reverse_motor);
+				printf("enable_motor is set to: %d\n", motors->enable_motor);
+				printf("forward_motor is set to: %d\n", motors->forward_motor);
+				printf("reverse_motor is set to: %d\n", motors->reverse_motor);
 
 				printf("setting mode of pins ... %s\n");
 				pinMode(motors->enable_motor, OUTPUT);
