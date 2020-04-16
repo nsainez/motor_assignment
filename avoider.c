@@ -26,10 +26,10 @@ int main(void)
 		printf("Initalization failed. ");
 		return 1;
 }		
-//	if(wiringPiISR(obstacle_pin, INT_EDGE_FAILING; &myISR){
-//		printf("Initalization ISR failed. \n");
-//		return 1;
-//	}
+	if(wiringPiISR(obstacle_pin, INT_EDGE_FAILING; &myISR){
+		printf("Initalization ISR failed. \n");
+		return 1;
+	}
 	
 
 	setup();
