@@ -7,10 +7,10 @@
 #include <stdlib.h>
 #include <softPwm.h>
 
-void init(stuct Motors *motors, int enable, int forward, int reverse);
-void forward(struct Motor *motors, int speed)
-void reverse(struct Motor *motors, int speed)
-void stop(struct Motor *motors)
+void init(struct Motors *motors, int enable, int forward, int reverse);
+void forward(struct Motor *motors, int speed);
+void reverse(struct Motor *motors, int speed);
+void stop(struct Motor *motors);
 
 /* DC Motor 1 : enable-11 control-13,15
    DC Motor 2 : enable-22 control-16,18 
@@ -116,7 +116,7 @@ void reverse (struct Motor *motors, int speed){
 		digitalWrite(motors -> forward_motor, 1);
 		digitalWrite(motors -> reverse_motor, 0);
 }
-void stop (struct Motor *motors){
+void stop (struct Motor *motors) {
 		printf("Stopping...");
 		softPwmWrite(motors -> enable_motor, speed);
 		digitalWrite(motors -> forward_motor, 1);
