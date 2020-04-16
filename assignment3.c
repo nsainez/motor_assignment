@@ -56,11 +56,12 @@ void stop(struct Motor *);
 			init(&m2, 6, 4, 5);
 		 	forward(&m1, speed_fast);
 		 	forward(&m2, speed_fast);
-		 	sleep(1);
+		 	sleep(3);
             stop(&m1);
 		 	stop(&m2);
 		 	reverse(&m1, speed_slow);
 		 	reverse(&m2, speed_slow);
+            sleep(3);
 		 	stop(&m1);
 		 	stop(&m2);
 
