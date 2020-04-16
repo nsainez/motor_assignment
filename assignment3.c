@@ -28,9 +28,9 @@ void stop(struct Motors *);
    the motor will either spin clockwise or counterclockwise	
 */
    struct Motor {
-		int enable_motor;
-		int forward_motor;
-		int reverse_motor;
+		int enable_motors;
+		int forward_motors;
+		int reverse_motors;
 	};
 
  int main() {
