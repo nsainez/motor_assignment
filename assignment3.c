@@ -28,9 +28,9 @@ void stop(struct Motors *);
    the motor will either spin clockwise or counterclockwise	
 */
    struct Motor {
-		int enable_motors;
-		int forward_motors;
-		int reverse_motors;
+		int enable_motor;
+		int forward_motor;
+		int reverse_motor;
 	};
 
  int main() {
@@ -68,9 +68,9 @@ void stop(struct Motors *);
 void init(struct Motors *motors, int enable, int forward, int reverse){
 
 //	printf("Initializating motor %d: \n", motors);
-	motors->enable_motors = enable;
-	motors->forward_motors = forward;
-	motors->reverse_motors = reverse;
+	motors->enable_motor = enable;
+	motors->forward_motor = forward;
+	motors->reverse_motor = reverse;
 
 	/*final param says how long each cycle is in basic pulse units
 		
