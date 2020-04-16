@@ -80,15 +80,15 @@ void init(struct Motors *motors, int enable, int forward, int reverse){
 	*/
 
 	//if
-        (softPwmCreate(enable, 75, 100) != 0) // {
+    (softPwmCreate(enable, 75, 100) != 0); // {
 //		printf("error setting pulse width modulation.");
 //		return 1;
 //	}
 //		else {
 				printf("pulse width modulation set successfully.");
-				printf("enable_motor is set to: %d\n", motor -> enable_motor);
-				printf("forward_motor is set to: %d\n", motor -> forward_motor);
-				printf("reverse_motor is set to: %d\n", motor -> reverse_motor);
+				printf("enable_motor is set to: %d\n", motors -> enable_motor);
+				printf("forward_motor is set to: %d\n", motors -> forward_motor);
+				printf("reverse_motor is set to: %d\n", motors -> reverse_motor);
 
 				printf("setting mode of pins ... %s\n");
 				pinMode(motors->enable_motor, OUTPUT);
@@ -98,7 +98,7 @@ void init(struct Motors *motors, int enable, int forward, int reverse){
 				printf("writing values to HIGH or LOW\n");
 
 				/*Turn on enable pin, the motors do not move since they are both set to low.*/
-				digitalWrite(motor->enable_motor, 1);
+				digitalWrite(motors->enable_motor, 1);
 				digitalWrite(motors->forward_motor, 0);
 				digitalWrite(motors->reverse_motor,0);
 			}
