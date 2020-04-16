@@ -79,12 +79,12 @@ void init(struct Motors *motors, int enable, int forward, int reverse){
 				returns 0 on success
 	*/
 
-//	if
-        (softPwmCreate(enable, 75, 100) != 0) //{
+	//if
+        (softPwmCreate(enable, 75, 100) != 0) // {
 //		printf("error setting pulse width modulation.");
 //		return 1;
 //	}
-		else {
+//		else {
 				printf("pulse width modulation set successfully.");
 				printf("enable_motor is set to: %d\n", motor -> enable_motor);
 				printf("forward_motor is set to: %d\n", motor -> forward_motor);
@@ -102,7 +102,7 @@ void init(struct Motors *motors, int enable, int forward, int reverse){
 				digitalWrite(motors->forward_motor, 0);
 				digitalWrite(motors->reverse_motor,0);
 			}
-	}
+	//}
 
 /* speed = duty cycle % from 0 - 100 */
 void forward(struct Motor *motors, int speed){
