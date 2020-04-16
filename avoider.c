@@ -11,7 +11,7 @@ then add in the Ultrasonic sensor.
 #include <wiringPi.h>
 #include <stdio.h>
 
-#define obstacle_pin
+//#define obstacle_pin
 
 void setup();
 void loop();
@@ -26,10 +26,10 @@ int main(void)
 		printf("Initalization failed. ");
 		return 1;
 }		
-	if(wiringPiISR(obstacle_pin, INT_EDGE_FAILING; &myISR){
-		printf("Initalization ISR failed. \n");
-		return 1;
-	}
+//	if(wiringPiISR(obstacle_pin, INT_EDGE_FAILING; &myISR){
+//		printf("Initalization ISR failed. \n");
+//		return 1;
+//	}
 	
 
 	setup();
@@ -38,7 +38,7 @@ int main(void)
 }
 
 void setup(){
-	pinMode(LED, OUTPUT);
+	//pinMode(LED, OUTPUT);
 	pinMode(obstacle_pin, INPUT);
 }
 
