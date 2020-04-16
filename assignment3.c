@@ -63,7 +63,7 @@ void stop(struct Motor *motors);
 }
 
 
-void init(stuct Motors *motors, int enable, int forward, int reverse){
+void init(struct Motors *motors, int enable, int forward, int reverse){
 
 	printf("Initializating motor %d: \n", motors);
 	motors -> enable_motor = enable;
@@ -103,20 +103,20 @@ void init(stuct Motors *motors, int enable, int forward, int reverse){
 	}
 
 /* speed = duty cycle % from 0 - 100 */
-void forward(struct Motor *motors, int speed){
+void forward(struct *motors, int speed){
 		printf("Moving forward...");
 		softPwmWrite(motors -> enable_motor, speed);
 		digitalWrite(motors -> forward_motor, 0);
 		digitalWrite(motors -> reverse_motor, 1);
 }
 
-void reverse (struct Motor *motors, int speed){
+void reverse (struct *motors, int speed){
 		printf("Moving in reverse...");
 		softPwmWrite(motors -> enable_motor, speed);
 		digitalWrite(motors -> forward_motor, 1);
 		digitalWrite(motors -> reverse_motor, 0);
 }
-void stop (struct Motor *motors) {
+void stop (struct *motors) {
 		printf("Stopping...");
 		softPwmWrite(motors -> enable_motor, speed);
 		digitalWrite(motors -> forward_motor, 1);
