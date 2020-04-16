@@ -7,10 +7,10 @@
 #include <stdlib.h>
 #include <softPwm.h>
 
-void init(struct Motors *motors, int , int , int );
-void forward(struct Motors *motors, int );
-void reverse(struct Motors *motors, int );
-void stop(struct Motors *motors);
+void init(struct Motors *, int , int , int );
+void forward(struct Motors *, int );
+void reverse(struct Motors *, int );
+void stop(struct Motors *);
 
 /* DC Motor 1 : enable-11 control-13,15
    DC Motor 2 : enable-22 control-16,18 
@@ -67,7 +67,7 @@ void stop(struct Motors *motors);
 
 void init(struct Motors *motors, int enable, int forward, int reverse){
 
-	printf("Initializating motor %d: \n", motors);
+//	printf("Initializating motor %d: \n", motors);
 	motors->enable_motors = enable;
 	motors->forward_motors = forward;
 	motors->reverse_motors = reverse;
