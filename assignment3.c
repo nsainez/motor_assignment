@@ -7,10 +7,10 @@
 #include <stdlib.h>
 #include <softPwm.h>
 
-void init(struct Motors *, int , int , int );
-void forward(struct Motors *, int );
-void reverse(struct Motors *, int );
-void stop(struct Motors *);
+void init(struct Motor *, int , int , int );
+void forward(struct Motor *, int );
+void reverse(struct Motor *, int );
+void stop(struct Motor *);
 
 /* DC Motor 1 : enable-11 control-13,15
    DC Motor 2 : enable-22 control-16,18 
@@ -38,7 +38,7 @@ void stop(struct Motors *);
 	struct Motor m1;
 	struct Motor m2;
     int speed_fast = 75;
-     int speed_slow = 30;
+    int speed_slow = 30;
 
 	if(wiringPiSetup() < 0){
 		printf("Initialization Failed.");
