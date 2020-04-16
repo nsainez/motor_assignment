@@ -121,7 +121,7 @@ void reverse (struct Motor *motors, int speed){
 }
 void stop (struct Motor *motors) {
 		printf("Stopping...");
-		softPwmWrite(motors->enable_motor, speed);
+		softPwmWrite(motors->enable_motor, 0);
 		digitalWrite(motors->forward_motor, 1);
 		digitalWrite(motors->reverse_motor, 1);
 }
