@@ -30,7 +30,7 @@ int main(void)
 //	int obstacle_pin = 29;
 //	int obstacle = HIGH; //high means no obstacle
 
-    if(wiringPi() < 0){
+    if(wiringPiSetup() < 0){
 		printf("Initalization failed. ");
 		return 1;
     }
