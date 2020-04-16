@@ -51,16 +51,16 @@ void stop(struct Motor *);
 
 		printf("Initialization Successful\n");
 
-			init(&m1, 11, 13, 15);
-			init(&m2, 22, 16, 18);
-//		 	forward(&m1, speed_fast);
-//		 	forward(&m2, speed_fast);
-//		 	stop(&m1);
-//		 	stop(&m2);
-//		 	backward(&m1, speed_slow);
-//		 	backward(&m2, speed_slow);
-//		 	stop(&m1);
-//		 	stop(&m2);
+			init(&m1, 0, 2, 3);
+			init(&m2, 6, 4, 5);
+		 	forward(&m1, speed_fast);
+		 	forward(&m2, speed_fast);
+		 	stop(&m1);
+		 	stop(&m2);
+		 	backward(&m1, speed_slow);
+		 	backward(&m2, speed_slow);
+		 	stop(&m1);
+		 	stop(&m2);
 
  		return 0;
 	}
@@ -108,22 +108,22 @@ void init(struct Motor * motors, int enable, int forward, int reverse){
 	//}
 
 ///* speed = duty cycle % from 0 - 100 */
-//void forward(struct Motor * motors, int speed){
-//		printf("Moving forward...");
-//		softPwmWrite(motors->enable_motor, speed);
-//		digitalWrite(motors->forward_motor, 0);
-//		digitalWrite(motors->reverse_motor, 1);
-//}
-//
-//void reverse (struct Motor * motors, int speed){
-//		printf("Moving in reverse...");
-//		softPwmWrite(motors->enable_motor, speed);
-//		digitalWrite(motors->forward_motor, 1);
-//		digitalWrite(motors->reverse_motor, 0);
-//}
-//void stop (struct Motor * motors) {
-//		printf("Stopping...");
-//		softPwmWrite(motors->enable_motor, 0);
-//		digitalWrite(motors->forward_motor, 1);
-//		digitalWrite(motors->reverse_motor, 1);
-//}
+void forward(struct Motor * motors, int speed){
+		printf("Moving forward...");
+		softPwmWrite(motors->enable_motor, speed);
+		digitalWrite(motors->forward_motor, 0);
+		digitalWrite(motors->reverse_motor, 1);
+}
+
+void reverse (struct Motor * motors, int speed){
+		printf("Moving in reverse...");
+		softPwmWrite(motors->enable_motor, speed);
+		digitalWrite(motors->forward_motor, 1);
+		digitalWrite(motors->reverse_motor, 0);
+}
+void stop (struct Motor * motors) {
+		printf("Stopping...");
+		softPwmWrite(motors->enable_motor, 0);
+		digitalWrite(motors->forward_motor, 1);
+		digitalWrite(motors->reverse_motor, 1);
+}
