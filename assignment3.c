@@ -7,6 +7,12 @@
 #include <stdlib.h>
 #include <softPwm.h>
 
+struct Motor {
+       int enable_motor;
+       int forward_motor;
+       int reverse_motor;
+   };
+
 void init(struct Motor *, int enable, int forward, int reverse);
 void forward(struct Motor *, int );
 void reverse(struct Motor *, int );
@@ -27,11 +33,7 @@ void stop(struct Motor *);
    When both are set the same, the motor does not move. if one is high and one is low
    the motor will either spin clockwise or counterclockwise	
 */
-   struct Motor {
-		int enable_motor;
-		int forward_motor;
-		int reverse_motor;
-	};
+  
 
  int main() {
 
