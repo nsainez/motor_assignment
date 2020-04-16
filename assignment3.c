@@ -7,26 +7,10 @@
 #include <stdlib.h>
 #include <softPwm.h>
 
-/* speed = duty cycle % from 0 - 100 */
-void forward(struct Motor *motors, int speed){
-        printf("Moving forward...");
-        softPwmWrite(motors->enable_motor, speed);
-        digitalWrite(motors->forward_motor, 0);
-        digitalWrite(motors->reverse_motor, 1);
-}
-
-void reverse (struct Motor *motors, int speed){
-        printf("Moving in reverse...");
-        softPwmWrite(motors->enable_motor, speed);
-        digitalWrite(motors->forward_motor, 1);
-        digitalWrite(motors->reverse_motor, 0);
-}
-void stop (struct Motor *motors) {
-        printf("Stopping...");
-        softPwmWrite(motors->enable_motor, speed);
-        digitalWrite(motors->forward_motor, 1);
-        digitalWrite(motors->reverse_motor, 1);
-}
+void init(struct *motors, int enable, int forward, int reverse);
+void forward(struct *motors, int speed);
+void reverse(struct *motors, int speed);
+void stop(struct *motors);
 
 /* DC Motor 1 : enable-11 control-13,15
    DC Motor 2 : enable-22 control-16,18 
@@ -101,9 +85,9 @@ void init(struct Motors *motors, int enable, int forward, int reverse){
 	} 
 		else {
 				printf("pulse width modulation set successfully.");
-				printf("enable_motor is set to: %d\n", motor->enable_motor);
-				printf("forward_motor is set to: %d\n", motor->forward_motor);
-				printf("reverse_motor is set to: %d\n", motor->reverse_motor);
+				printf("enable_motor is set to: %d\n", motor -> enable_motor);
+				printf("forward_motor is set to: %d\n", motor -> forward_motor);
+				printf("reverse_motor is set to: %d\n", motor -> reverse_motor);
 
 				printf("setting mode of pins ... %s\n");
 				pinMode(motors->enable_motor, OUTPUT);
@@ -119,3 +103,23 @@ void init(struct Motors *motors, int enable, int forward, int reverse){
 			}
 	}
 
+/* speed = duty cycle % from 0 - 100 */
+void forward(struct Motor *motors, int speed){
+		printf("Moving forward...");
+		softPwmWrite(motors -> enable_motor, speed);
+		digitalWrite(motors -> forward_motor, 0);
+		digitalWrite(motors -> reverse_motor, 1);
+}
+
+void reverse (struct Motor *motors, int speed){
+		printf("Moving in reverse...");
+		softPwmWrite(motors -> enable_motor, speed);
+		digitalWrite(motors -> forward_motor, 1);
+		digitalWrite(motors -> reverse_motor, 0);
+}
+void stop (struct Motor *motors) {
+		printf("Stopping...");
+		softPwmWrite(motors -> enable_motor, speed);
+		digitalWrite(motors -> forward_motor, 1);
+		digitalWrite(motors -> reverse_motor, 1);
+}
