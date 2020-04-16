@@ -26,7 +26,7 @@ int main(void)
 		printf("Initalization failed. ");
 		return 1;
     }
-	if(wiringPiISR(obstacle_pin, INT_EDGE_FAILING){
+	if(wiringPiISR(obstacle_pin, INT_EDGE_FALLING){
 		printf("Initalization ISR failed. \n");
 		return 1;
 	}
