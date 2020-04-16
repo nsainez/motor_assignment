@@ -35,8 +35,7 @@ int main(void)
 	setup();
 	loop();
 
-       return 0;
-}
+    }
        
 
 void setup(){
