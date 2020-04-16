@@ -16,17 +16,21 @@ then add in the Ultrasonic sensor.
 void setup();
 void loop();
 
+int obstacle_pin = 29;
+int obstacle = HIGH; //high means no obstacle
+
+
 int main(void)
 {
 	// int LED = 13;
-	int obstacle_pin = 29;
-	int obstacle = HIGH; //high means no obstacle
+//	int obstacle_pin = 29;
+//	int obstacle = HIGH; //high means no obstacle
 
     if(wiringPi() < 0){
 		printf("Initalization failed. ");
 		return 1;
     }
-	if(wiringPiISR(obstacle_pin, INT_EDGE_FALLING){
+	if(wiringPiISR(obstacle_pin, INT_EDGE_FAILING; &myISR){
 		printf("Initalization ISR failed. \n");
 		return 1;
 	}
