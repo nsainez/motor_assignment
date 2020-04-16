@@ -6,6 +6,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <softPwm.h>
+#include <unistd.h>
 
 struct Motor {
        int enable_motor;
@@ -55,7 +56,8 @@ void stop(struct Motor *);
 			init(&m2, 6, 4, 5);
 		 	forward(&m1, speed_fast);
 		 	forward(&m2, speed_fast);
-		 	stop(&m1);
+		 	sleep(1);
+            stop(&m1);
 		 	stop(&m2);
 		 	reverse(&m1, speed_slow);
 		 	reverse(&m2, speed_slow);
