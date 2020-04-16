@@ -57,8 +57,8 @@ void stop(struct Motor *);
 		 	forward(&m2, speed_fast);
 		 	stop(&m1);
 		 	stop(&m2);
-		 	backward(&m1, speed_slow);
-		 	backward(&m2, speed_slow);
+		 	reverse(&m1, speed_slow);
+		 	reverse(&m2, speed_slow);
 		 	stop(&m1);
 		 	stop(&m2);
 
