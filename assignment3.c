@@ -65,7 +65,7 @@ void stop(struct Motors *);
 }
 
 
-void init(struct Motors *motors, int enable, int forward, int reverse){
+void init(struct Motor *motors, int enable, int forward, int reverse){
 
 //	printf("Initializating motor %d: \n", motors);
 	motors->enable_motor = enable;
