@@ -22,10 +22,10 @@ int main(void)
 	int obstacle_pin = 29;
 	int obstacle = HIGH; //high means no obstacle
 
-	if(wiringPi() < 0);
+    if(wiringPi() < 0){
 		printf("Initalization failed. ");
 		return 1;
-}		
+    }
 	if(wiringPiISR(obstacle_pin, INT_EDGE_FAILING; &myISR){
 		printf("Initalization ISR failed. \n");
 		return 1;
@@ -35,7 +35,7 @@ int main(void)
 	setup();
 	loop();
 
-    }
+}
        
 
 void setup(){
