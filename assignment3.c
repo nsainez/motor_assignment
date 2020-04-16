@@ -51,14 +51,14 @@ void stop(struct Motor *);
 
 			init(&m1, 11, 13, 15);
 			init(&m2, 22, 16, 18);
-		 	forward(&m1, speed_fast);
-		 	forward(&m2, speed_fast);
-		 	stop(&m1);
-		 	stop(&m2);
-		 	backward(&m1, speed_slow);
-		 	backward(&m2, speed_slow);
-		 	stop(&m1);
-		 	stop(&m2);
+//		 	forward(&m1, speed_fast);
+//		 	forward(&m2, speed_fast);
+//		 	stop(&m1);
+//		 	stop(&m2);
+//		 	backward(&m1, speed_slow);
+//		 	backward(&m2, speed_slow);
+//		 	stop(&m1);
+//		 	stop(&m2);
 
  		return 0;
 	}
