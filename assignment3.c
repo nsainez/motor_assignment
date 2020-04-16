@@ -67,9 +67,9 @@ void stop(struct Motors *);
 void init(struct Motors *motors, int enable, int forward, int reverse){
 
 	printf("Initializating motor %d: \n", motors);
-	motors -> enable_motor = enable;
-	motors -> forward_motor = forward;
-	motors -> reverse_motor = reverse;
+	motors->enable_motor = enable;
+	motors->forward_motor = forward;
+	motors->reverse_motor = reverse;
 
 	/*final param says how long each cycle is in basic pulse units
 		
@@ -107,20 +107,20 @@ void init(struct Motors *motors, int enable, int forward, int reverse){
 /* speed = duty cycle % from 0 - 100 */
 void forward(struct Motor *motors, int speed){
 		printf("Moving forward...");
-		softPwmWrite(motors -> enable_motor, speed);
-		digitalWrite(motors -> forward_motor, 0);
-		digitalWrite(motors -> reverse_motor, 1);
+		softPwmWrite(motors->enable_motor, speed);
+		digitalWrite(motors->forward_motor, 0);
+		digitalWrite(motors->reverse_motor, 1);
 }
 
 void reverse (struct Motor *motors, int speed){
 		printf("Moving in reverse...");
-		softPwmWrite(motors -> enable_motor, speed);
-		digitalWrite(motors -> forward_motor, 1);
-		digitalWrite(motors -> reverse_motor, 0);
+		softPwmWrite(motors->enable_motor, speed);
+		digitalWrite(motors->forward_motor, 1);
+		digitalWrite(motors->reverse_motor, 0);
 }
 void stop (struct Motor *motors) {
 		printf("Stopping...");
-		softPwmWrite(motors -> enable_motor, speed);
-		digitalWrite(motors -> forward_motor, 1);
-		digitalWrite(motors -> reverse_motor, 1);
+		softPwmWrite(motors->enable_motor, speed);
+		digitalWrite(motors->forward_motor, 1);
+		digitalWrite(motors->reverse_motor, 1);
 }
