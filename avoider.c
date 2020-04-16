@@ -15,6 +15,10 @@ then add in the Ultrasonic sensor.
 
 void setup();
 void loop();
+void myISR(void){
+    printf("Obstacle Avoidance sensor test\n");
+    printf("detected: There is an obstacle ahead");
+}
 
 int obstacle_pin = 29;
 int obstacle = HIGH; //high means no obstacle
@@ -26,19 +30,19 @@ int main(void)
 //	int obstacle_pin = 29;
 //	int obstacle = HIGH; //high means no obstacle
 
-//    if(wiringPi() < 0){
-//		printf("Initalization failed. ");
-//		return 1;
-//    }
-	if(wiringPiISR(obstacle_pin, INT_EDGE_FALLING, &myISR)){
+    if(wiringPi() < 0){
+		printf("Initalization failed. ");
+		return 1;
+    }
+	if(wiringPiISR(obstacle_pin, INT_EDGE_FALLING, &myISR)<0){
 		printf("Initalization ISR failed. \n");
 		return 1;
 	}
 	
-
+    while(1){
 	setup();
 	loop();
-
+    }
 }
        
 
