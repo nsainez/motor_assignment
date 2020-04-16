@@ -81,7 +81,7 @@ void init(struct Motors *motors, int enable, int forward, int reverse){
 	*/
 
 	//if
-    (softPwmCreate(enable, 75, 100) != 0); // {
+    softPwmCreate(enable, 75, 100);  //( != 0)  {
 //		printf("error setting pulse width modulation.");
 //		return 1;
 //	}
