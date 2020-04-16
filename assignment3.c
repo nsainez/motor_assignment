@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include <softPwm.h>
 
-void init(struct Motor *, int , int , int );
+void init(struct Motor *, int enable, int forward, int reverse);
 void forward(struct Motor *, int );
 void reverse(struct Motor *, int );
 void stop(struct Motor *);
